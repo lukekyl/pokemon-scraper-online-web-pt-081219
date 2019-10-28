@@ -15,9 +15,9 @@ class Pokemon
         INSERT INTO pokemon (name, type, db)
         VALUES (?, ?, ?)
       SQL
-      @db.execute(sql, self.id, self.type, self.db)
+      @db.execute(sql, self.name, self.type, self.db)
       @id = @db.execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
-      binding pry
+      
   end
 
   def find(name)

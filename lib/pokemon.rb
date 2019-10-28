@@ -21,7 +21,7 @@ class Pokemon
   end
 
   def self.find(number, db)
-    result = db.execute("SELECT * FROM pokemon WHERE id = ?",number)
+    result = db.execute("SELECT * FROM pokemon WHERE id = ?", number)
     Pokemon.new(result[0][0], result[0][1], result[0][2], result[0][3])
   end
 

@@ -1,3 +1,5 @@
+require "pry"
+
 class Pokemon
   attr_accessor :id, :name, :type, :db
 
@@ -18,7 +20,7 @@ class Pokemon
       SQL
       DB[:conn].execute(sql, self.id, self.type, self.db)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemon")[0][0]
-      p @id
+      binding pry
     end
   end
 
